@@ -1,29 +1,29 @@
 class Bankaccount():
     bank_name  = "HDFC"
 
-    def __init__(self,name,balance):
+    def __init__(self,name,balance): # Initialization with the Constructor
         self.name = name
         self.balance = balance
 
-    def deposit(self,d_amount):
+    def deposit(self,d_amount):     #Amount Deposite Function
         self.balance += d_amount
         print(f"Amount Deposited : {d_amount}, Current Balance : {self.balance:.2f}")
     
-    def withdraw(self, w_amount):
+    def withdraw(self, w_amount):   #Amount Withdrawal Function
         if self.balance >= w_amount:
             self.balance -= w_amount
             print(f"Amount withdrawn : {w_amount}, Current Balance : {self.balance:.2f}")
         else:
             print("Insufficient Balance")
     
-    def display_balance(self):
+    def display_balance(self):      #Balance Check Function
         print (f"Hi {self.name}, Your account balance = {self.balance:.2f}")
 
-    @classmethod
+    @classmethod        #Class method
     def change_bank(cls, new_bank):
         cls.bank_name = new_bank
     
-    @staticmethod
+    @staticmethod       #Static Method
     def interest(amount, rate):
         print (f"Interest rate for {amount} at {rate} : {(amount * rate) / 100}")
 
